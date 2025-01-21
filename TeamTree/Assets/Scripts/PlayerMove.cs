@@ -5,22 +5,25 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public int playerSpeed = 5;
+    public int playerSpeed = 10;
     public float playerDirection;
     private Rigidbody2D rigBodPlayer;
+    private SpriteRenderer spritePlayer;
     // Start is called before the first frame update
     void Start()
     {
         rigBodPlayer = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.eulerAngles = new Vector3(0,0,InputPick(playerDirection));
+        
 
         if (InputPick(playerDirection) != 500)
         {
+            gameObject.transform.eulerAngles = new Vector3(0, 0, InputPick(playerDirection));
             rigBodPlayer.velocity = gameObject.transform.up * playerSpeed;
         }
         else
