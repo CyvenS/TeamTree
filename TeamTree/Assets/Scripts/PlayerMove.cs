@@ -92,11 +92,11 @@ public class PlayerMove : MonoBehaviour
         {
             if (keyLeft)
             {
-                direction = 315;
+                direction = 45;
             }
             else if (keyRight)
             {
-                direction = 45;
+                direction = 315;
             }
             else if (!keyLeft &&  !keyRight)
             {
@@ -107,11 +107,11 @@ public class PlayerMove : MonoBehaviour
         {
             if (keyLeft)
             {
-                direction = 225;
+                direction = 135;
             }
             else if (keyRight)
             {
-                direction = 135;
+                direction = 225;
             }
             else if (!keyLeft && !keyRight)
             {
@@ -120,11 +120,11 @@ public class PlayerMove : MonoBehaviour
         }
         else if (keyLeft)
         {
-            direction = 270;
+            direction = 90;
         }
         else if (keyRight)
         { 
-            direction = 90; 
+            direction = 270; 
         }
         else
         {
