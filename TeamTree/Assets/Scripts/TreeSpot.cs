@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TreeSpot : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject HeldObj;
+    public HeldObjectScript HeldObjectScript;
     public float playerDis;
     public bool inRange;
     private SpriteRenderer treespotSprite;
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("PlayerObj");
+        HeldObj = GameObject.Find("HeldObj");
         treespotSprite = GetComponent<SpriteRenderer>();
+        HeldObjectScript = HeldObj.GetComponent<HeldObjectScript>();
+
     }
 
     // Update is called once per frame
@@ -31,7 +38,14 @@ public class TreeSpot : MonoBehaviour
 
         if (inRange && Input.GetKey(KeyCode.E))
         {
-            treespotSprite.color = Color.red;
+            if (HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red)
+            {
+                treespotSprite.color = Color.red;
+            }
+            else if (HeldObjectScript.currentHeld == 1 && treespotSprite.color == Color.red) // if holding watering can and tree is planted, water tree (colour magenta)
+            {
+                treespotSprite.color = Color.magenta;
+            }
         }
     }
 }

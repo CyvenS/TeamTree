@@ -6,7 +6,6 @@ public class PlayerAnim : MonoBehaviour
 {
     private SpriteRenderer spritePlayer;
     public GameObject playerObj;
-    public SpriteRenderer[] heldRender;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,20 +19,10 @@ public class PlayerAnim : MonoBehaviour
         if (playerObj.transform.eulerAngles.z < 180 && playerObj.transform.eulerAngles.z > 0)
         {
             spritePlayer.flipX = false;
-
-            for (int i = 0; i < 3; i++)//flip the sprites of every object the player holds
-            {
-                heldRender[i].flipX = false;
-            }
         }
-        if (playerObj.transform.eulerAngles.z > 180 && playerObj.transform.eulerAngles.z < 360)
+        else if (playerObj.transform.eulerAngles.z > 180 && playerObj.transform.eulerAngles.z < 360)
         {
             spritePlayer.flipX = true;
-
-            for (int i = 0; i < 3; i++)//flip the sprites of every object the player holds
-            {
-                heldRender[i].flipX = true;
-            }
         }
     }
 }
