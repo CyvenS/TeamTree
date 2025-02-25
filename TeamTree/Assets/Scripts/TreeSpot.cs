@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class TreeSpot : MonoBehaviour
 {
+    public AudioSource TreePlant;
     public GameObject Player;
     public GameObject HeldObj;
     public HeldObjectScript HeldObjectScript;
@@ -19,6 +20,7 @@ public class TreeSpot : MonoBehaviour
         HeldObj = GameObject.Find("HeldObj");
         treespotSprite = GetComponent<SpriteRenderer>();
         HeldObjectScript = HeldObj.GetComponent<HeldObjectScript>();
+        TreePlant = GetComponent<AudioSource>();
 
     }
 
@@ -41,6 +43,8 @@ public class TreeSpot : MonoBehaviour
             if (HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red)
             {
                 treespotSprite.color = Color.red;
+                TreePlant.Play ();
+                
             }
             else if (HeldObjectScript.currentHeld == 1 && treespotSprite.color == Color.red) // if holding watering can and tree is planted, water tree (colour magenta)
             {
