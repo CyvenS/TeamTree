@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class TreeSpot : MonoBehaviour
 {
     public AudioSource TreePlant;
+    public int occupied; // 0 is empty, 1 is sapling, 2 is invasive plant
     public GameObject Player;
     public GameObject HeldObj;
     public HeldObjectScript HeldObjectScript;
@@ -38,18 +39,27 @@ public class TreeSpot : MonoBehaviour
         }
 
 
-        if (inRange && Input.GetKey(KeyCode.E))
+        if (inRange && Input.GetKey(KeyCode.E)) //keep this for sapling planting + shovel
         {
-            if (HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red)
+            if (occupied == 0 && HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red for now, update to spawn sapling gameobject)
             {
                 treespotSprite.color = Color.red;
-                TreePlant.Play ();
-                
+                occupied = 1;
+                TreePlant.Play();
             }
-            else if (HeldObjectScript.currentHeld == 1 && treespotSprite.color == Color.red) // if holding watering can and tree is planted, water tree (colour magenta)
+            else if (occupied == 2 && HeldObjectScript.currentHeld == 3) //if holding shovel, remove invasive plant. (colour white for now, update to kill invasive plant gameobject)
             {
-                treespotSprite.color = Color.magenta;
+                occupied = 0;
+                treespotSprite.color = Color.white;
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water") && occupied == 1)
+        {
+            treespotSprite.color = Color.magenta;
+            isWatered = true;
         }
     }
 }
