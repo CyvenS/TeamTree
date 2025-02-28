@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class TreeSpot : MonoBehaviour
 {
     public AudioSource TreePlant;
-    public int occupied; // 0 is empty, 1 is sapling, 2 is invasive plant
     public GameObject Player;
     public GameObject HeldObj;
     public HeldObjectScript HeldObjectScript;
@@ -15,6 +14,9 @@ public class TreeSpot : MonoBehaviour
     public bool inRange;
     private SpriteRenderer treespotSprite;
     // Start is called before the first frame update
+
+    public bool isWatered;
+    public int occupied; // 0 is empty, 1 is sapling, 2 is invasive plant
     void Start()
     {
         Player = GameObject.Find("PlayerObj");
