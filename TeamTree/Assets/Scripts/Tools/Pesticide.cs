@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WateringCan : MonoBehaviour
+public class Pesticide : MonoBehaviour
 {
-    public int canLevel;
-    public GameObject WaterSpray;
+    public int sprayLevel;
+    public GameObject PestSpray;
     private GameObject Player;
-    private 
+    private
     // Start is called before the first frame update
     void Start()
     {
@@ -17,54 +18,49 @@ public class WateringCan : MonoBehaviour
 
     void Update()
     {
-        DebugWater();
+        DebugSpray();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            WateringRun();
+            PestSprayRun();
         }
     }
 
-    void WateringRun()
+    void PestSprayRun()
     {
-        GameObject newSpray = Instantiate(WaterSpray);
-        if (canLevel == 0)
+        GameObject newSpray = Instantiate(PestSpray);
+        if (sprayLevel == 0)
         {
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
             newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
         }
-        else if (canLevel == 1)
+        else if (sprayLevel == 1)
         {
-            newSpray.transform.localScale = new Vector3 (3, 3, 1);
+            newSpray.transform.localScale = new Vector3(3, 3, 1);
             newSpray.transform.position = Player.transform.position;
             newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 4);
         }
-        else //if (canLevel == 2)
+        else //if (sprayLevel == 2)
         {
             newSpray.transform.localScale = new Vector3(3, 3, 1);
             newSpray.transform.position = Player.transform.position;
             newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 4);
 
-            newSpray = Instantiate(WaterSpray);
+            newSpray = Instantiate(PestSpray);
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
             newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
             newSpray.transform.position = newSpray.transform.position + (Player.transform.right * 2);
-            newSpray = Instantiate(WaterSpray);
+            newSpray = Instantiate(PestSpray);
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
             newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
             newSpray.transform.position = newSpray.transform.position + (Player.transform.right * -2);
 
         }
-
     }
-
-    void DebugWater()
+    void DebugSpray()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            canLevel++;
-        }
+        sprayLevel++;
     }
 }
