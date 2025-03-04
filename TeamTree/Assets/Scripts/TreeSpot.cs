@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class TreeSpot : MonoBehaviour
 {
     public AudioSource TreePlant;
+    public AudioSource TreeWatered;
     public GameObject Player;
     public GameObject HeldObj;
     public HeldObjectScript HeldObjectScript;
@@ -23,7 +24,8 @@ public class TreeSpot : MonoBehaviour
         HeldObj = GameObject.Find("HeldObj");
         treespotSprite = GetComponent<SpriteRenderer>();
         HeldObjectScript = HeldObj.GetComponent<HeldObjectScript>();
-        TreePlant = GetComponent<AudioSource>();
+       // TreePlant = GetComponent<AudioSource>();
+        //TreeWatered = GetComponent<AudioSource>();
 
     }
 
@@ -62,6 +64,7 @@ public class TreeSpot : MonoBehaviour
         {
             treespotSprite.color = Color.magenta;
             isWatered = true;
+            TreeWatered.Play();
         }
     }
 }
