@@ -18,7 +18,7 @@ public class TreeHP : MonoBehaviour
         //destroy gameobject when HP reaches zero
         if (treeHP <= 0)
         {
-            GameObject.Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

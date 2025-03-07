@@ -17,6 +17,10 @@ public class Resource : MonoBehaviour
         if (collision.gameObject.tag == "Player") 
         {
             ResourceManager.resourceAmount++;
+            ResourceManager.playerScore += 10;
+            Destroy(gameObject);
+            Debug.Log("Resources Held " +  ResourceManager.resourceAmount);
+            Debug.Log("Score " + ResourceManager.playerScore);
         }
     }
 }
