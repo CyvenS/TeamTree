@@ -8,8 +8,8 @@ public class Enemy_Spawner : MonoBehaviour
 
     public float timeBetweenSpawns = 3f;
     public static float enemy_Limit;
-    public Vector2 spawnRangeX = new Vector2(3, -3);
-    public Vector2 spawnRangeY = new Vector2(3, -3);
+    public Vector2 spawnRangeX = new Vector2(1, -1);
+    public Vector2 spawnRangeY = new Vector2(1, -1);
     
     private void Start()
     {

@@ -4,12 +4,15 @@ using UnityEngine.AI;
 
 public class enemyai : MonoBehaviour
 {
-    public float speed = 5f; 
+    public float speed = 2f;
+    public float bugHealth;
     private Transform target;
     private NavMeshAgent agent; //seting a new new navmesh
+    private bool isDestroyed = false;
 
     void Start()
     {
+        bugHealth = 3f;
         agent = GetComponent<NavMeshAgent>(); //grabbing the mesh of the the sttached enemy
         PickNewTarget();
     }
@@ -42,6 +45,26 @@ public class enemyai : MonoBehaviour
         if (targets.Length > 0)
         {
             target = targets[Random.Range(0, targets.Length)].transform;
+            bugHealth--;
+            Debug.Log(gameObject.name + " hit, Health: " + bugHealth);
+
+            if (bugHealth <= 0)
+            {
+                isDestroyed = true;
+                Destroy(this.gameObject);
+            }
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("target")&& !isDestroyed)
+        {
+            //bugHealth--;
+            //if (bugHealth <= 0)
+           // {
+                //isDestroyed = true;
+                //Destroy(gameObject);
+            //}
         }
     }
 }
