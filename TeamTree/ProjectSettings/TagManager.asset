@@ -8,6 +8,7 @@ TagManager:
   - Tools
   - PestSpray
   - target
+  - Enemy
   layers:
   - Default
   - TransparentFX
