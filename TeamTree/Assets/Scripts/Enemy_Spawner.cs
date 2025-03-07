@@ -6,7 +6,7 @@ public class Enemy_Spawner : MonoBehaviour
 {
     public GameObject enemyToSpawn;
 
-    public float timeBetweenSpawns = 3f;
+    public float timeBetweenSpawns = 6f;
     public static float enemy_Limit;
     public Vector2 spawnRangeX = new Vector2(1, -1);
     public Vector2 spawnRangeY = new Vector2(1, -1);
@@ -36,11 +36,12 @@ public class Enemy_Spawner : MonoBehaviour
 
 
         Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireCube(Vector2.zero, new Vector3(spawnRangeX.y - spawnRangeX.x, spawnRangeY.y - spawnRangeY.x, 0));
     }
 }
