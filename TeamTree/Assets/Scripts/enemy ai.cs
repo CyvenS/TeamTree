@@ -74,7 +74,12 @@ public class enemyai : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+            Debug.Log("touch");
+            if (collision.gameObject.CompareTag("Pesticide"))
+            {
+            bugHealth--;
+            }
+
     }
 }
 
