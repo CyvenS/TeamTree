@@ -31,29 +31,29 @@ public class WateringCan : MonoBehaviour
         {
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
-            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
+            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 1.5f);
         }
         else if (canLevel == 1)
         {
             newSpray.transform.localScale = new Vector3 (3, 3, 1);
             newSpray.transform.position = Player.transform.position;
-            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 4);
+            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 2);
         }
         else //if (canLevel == 2)
         {
             newSpray.transform.localScale = new Vector3(3, 3, 1);
             newSpray.transform.position = Player.transform.position;
-            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 4);
+            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 2);
 
             newSpray = Instantiate(WaterSpray);
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
-            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
+            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 1);
             newSpray.transform.position = newSpray.transform.position + (Player.transform.right * 2);
             newSpray = Instantiate(WaterSpray);
             newSpray.transform.localScale = new Vector3(2, 2, 1);
             newSpray.transform.position = Player.transform.position;
-            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 3);
+            newSpray.transform.position = newSpray.transform.position + (Player.transform.up * 1);
             newSpray.transform.position = newSpray.transform.position + (Player.transform.right * -2);
 
         }

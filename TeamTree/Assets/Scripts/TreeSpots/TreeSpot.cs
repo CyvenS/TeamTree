@@ -35,11 +35,11 @@ public class TreeSpot : MonoBehaviour
     void Update()
     {
        playerDis = Vector3.Distance (Player.transform.position, gameObject.transform.position);
-        if (playerDis < 5)
+        if (playerDis < 2)
         {
             inRange = true;
         }
-        else if (playerDis > 5)
+        else if (playerDis > 2)
         {
             inRange= false;
         }

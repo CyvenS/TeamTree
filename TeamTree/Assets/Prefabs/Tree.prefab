@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8305306439147771053}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sapling1: {fileID: -2413806693520163455, guid: 766c75f3737a9444ba75fa77ae50686e, type: 3}
   tree: {fileID: 8027025398663836544}
+  isWatered: 0
 --- !u!58 &6336819088750374929
 CircleCollider2D:
   m_ObjectHideFlags: 0
