@@ -12,6 +12,8 @@ public class TreeHP : MonoBehaviour
     public int treeHP; //int to store HP
     public string enemyTag; //set to whatever tag the enemy is
 
+    private enemyai remove;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +27,7 @@ public class TreeHP : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //whenever gameobject tagged as an enemy collides with tree, subtract hp
-        if (collision.gameObject.tag == enemyTag)
+        if (collision.gameObject.tag == enemyTag)//"target")
         {
             treeHP--;
         }
