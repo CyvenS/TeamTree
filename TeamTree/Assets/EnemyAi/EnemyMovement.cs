@@ -10,11 +10,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        tree = FindObjectOfType<TreeSpot>().transform;
+        tree = FindObjectOfType<trackingManager>().transform;
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, tree.transform.position, moveSpeed * Time.deltaTime);    //Constantly move the enemy towards the player
+        transform.position = Vector2.MoveTowards(transform.position, tree.transform.position, moveSpeed * Time.deltaTime);    
     }
 }
