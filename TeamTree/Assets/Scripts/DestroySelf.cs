@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroySelf : MonoBehaviour
 {
+    private enemyai healthTICK;
     private int destroy = 120;
     // Start is called before the first frame update
     void Start()
@@ -19,5 +20,9 @@ public class DestroySelf : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
