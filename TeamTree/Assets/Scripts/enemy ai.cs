@@ -32,6 +32,7 @@ public class enemyai : MonoBehaviour
         {
             
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Debug.Log(target.position + "currently tracking target " + target);
         }
 
         
@@ -48,6 +49,7 @@ public class enemyai : MonoBehaviour
         {
             target = targets[Random.Range(0, targets.Length)].transform;
             bugHealth--;
+            Debug.Log("next target");
             Debug.Log(gameObject.name + " hit, Health: " + bugHealth);
 
             if (bugHealth <= 0)
@@ -55,6 +57,7 @@ public class enemyai : MonoBehaviour
                 isDestroyed = true;
                 Destroy(this.gameObject);
             }
+            
         }
     }
     void OnTriggerEnter(Collider other)
