@@ -203,6 +203,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 66084262}
     - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
+      propertyPath: TreeSapling
+      value: 
+      objectReference: {fileID: 2351081929751058799, guid: 7893a9b5753d6a749bea97449c160c9d, type: 3}
+    - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
       propertyPath: TreeWatered
       value: 
       objectReference: {fileID: 66084268}
@@ -1003,6 +1007,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1031854073}
     - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
+      propertyPath: TreeSapling
+      value: 
+      objectReference: {fileID: 2351081929751058799, guid: 7893a9b5753d6a749bea97449c160c9d, type: 3}
+    - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
       propertyPath: TreeWatered
       value: 
       objectReference: {fileID: 1031854072}
@@ -1351,6 +1359,10 @@ PrefabInstance:
       propertyPath: TreePlant
       value: 
       objectReference: {fileID: 1233629137}
+    - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
+      propertyPath: TreeSapling
+      value: 
+      objectReference: {fileID: 2351081929751058799, guid: 7893a9b5753d6a749bea97449c160c9d, type: 3}
     - target: {fileID: 8941685979486413757, guid: 13505eab0e796e144b8aaf4d20170a2e, type: 3}
       propertyPath: TreeWatered
       value: 

@@ -18,6 +18,8 @@ public class TreeGrowth : MonoBehaviour
     //Grown Tree Object
     public GameObject tree;
 
+    public bool isWatered;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,10 @@ public class TreeGrowth : MonoBehaviour
     void Update()
     {
         //as timer increases tree grows
-        growthTime += Time.deltaTime;
+        if (isWatered == true)
+        {
+            growthTime += Time.deltaTime;
+        }
         if (growthTime >= 5 && growthTime < 10)
         {
             growthCheck1 = true;
@@ -43,6 +48,13 @@ public class TreeGrowth : MonoBehaviour
         { 
             tree.gameObject.SetActive(true);
             gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            isWatered = true;
         }
     }
 }
