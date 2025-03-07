@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c6970dac98ffa74398b77e1b747eec1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b03f55a761d7042811773c95d436cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TreePlant: {fileID: 0}
+  TreeWatered: {fileID: 0}
   Player: {fileID: 0}
   HeldObj: {fileID: 0}
   HeldObjectScript: {fileID: 0}
   playerDis: 0
   inRange: 0
+  isWatered: 0
   occupied: 0
 --- !u!58 &5147097749705614797
 CircleCollider2D:
