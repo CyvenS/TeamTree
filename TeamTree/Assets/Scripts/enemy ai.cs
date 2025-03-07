@@ -44,7 +44,11 @@ public class enemyai : MonoBehaviour
 
     void PickNewTarget()
     {
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("target");
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
+
+        
+        
+
         if (targets.Length > 0)
         {
             target = targets[Random.Range(0, targets.Length)].transform;
