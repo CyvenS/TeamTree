@@ -10,6 +10,8 @@ public class enemyai : MonoBehaviour
     private NavMeshAgent agent; //seting a new new navmesh
     private bool isDestroyed = false;
 
+    private DestroySelf dcHealth;
+
     void Start()
     {
         bugHealth = 3f;
@@ -66,6 +68,10 @@ public class enemyai : MonoBehaviour
                 //Destroy(gameObject);
             //}
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
 
