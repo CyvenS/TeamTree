@@ -14,7 +14,7 @@ public class enemyai : MonoBehaviour
 
     void Start()
     {
-        bugHealth = 3f;
+        bugHealth = 2;
         agent = GetComponent<NavMeshAgent>(); //grabbing the mesh of the the sttached enemy
         PickNewTarget();
     }
@@ -44,7 +44,7 @@ public class enemyai : MonoBehaviour
 
     void PickNewTarget()
     {
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("target");
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
         if (targets.Length > 0)
         {
             target = targets[Random.Range(0, targets.Length)].transform;
@@ -55,7 +55,7 @@ public class enemyai : MonoBehaviour
             if (bugHealth <= 0)
             {
                 isDestroyed = true;
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
             
         }
@@ -72,14 +72,15 @@ public class enemyai : MonoBehaviour
             //}
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-            Debug.Log("touch");
-            if (collision.gameObject.CompareTag("Pesticide"))
-            {
+        Debug.Log("touch");
+        if (collision.gameObject.CompareTag("PestSpray"))
+        {
+            Destroy(gameObject);
             bugHealth--;
-            }
-
+        }
     }
+
 }
 
