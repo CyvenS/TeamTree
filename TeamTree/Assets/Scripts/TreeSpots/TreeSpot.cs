@@ -50,7 +50,7 @@ public class TreeSpot : MonoBehaviour
             if (occupied == 0 && HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red for now, update to spawn sapling gameobject)
             {
                 GameObject newtree = Instantiate(TreeSapling);
-                newtree.transform.position = gameObject.transform.position;
+                newtree.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + -1);
                 occupied = 1;
                 TreePlant.Play();
                 
