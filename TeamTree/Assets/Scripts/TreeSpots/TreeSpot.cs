@@ -14,6 +14,8 @@ public class TreeSpot : MonoBehaviour
     public float playerDis;
     public bool inRange;
     private SpriteRenderer treespotSprite;
+
+    public GameObject TreeSapling;
     // Start is called before the first frame update
 
     public bool isWatered;
@@ -33,11 +35,11 @@ public class TreeSpot : MonoBehaviour
     void Update()
     {
        playerDis = Vector3.Distance (Player.transform.position, gameObject.transform.position);
-        if (playerDis < 10)
+        if (playerDis < 2)
         {
             inRange = true;
         }
-        else if (playerDis > 10)
+        else if (playerDis > 2)
         {
             inRange= false;
         }
@@ -47,9 +49,11 @@ public class TreeSpot : MonoBehaviour
         {
             if (occupied == 0 && HeldObjectScript.currentHeld == 2) //if holding sapling, plant tree (colour red for now, update to spawn sapling gameobject)
             {
-                treespotSprite.color = Color.red;
+                GameObject newtree = Instantiate(TreeSapling);
+                newtree.transform.position = gameObject.transform.position;
                 occupied = 1;
                 TreePlant.Play();
+                
             }
             else if (occupied == 2 && HeldObjectScript.currentHeld == 3) //if holding shovel, remove invasive plant. (colour white for now, update to kill invasive plant gameobject)
             {

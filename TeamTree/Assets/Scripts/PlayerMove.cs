@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class PlayerMove : MonoBehaviour
     public float playerDirection;
     private Rigidbody2D rigBodPlayer;
     private SpriteRenderer spritePlayer;
+
+    public int Health;
+    public TextMeshProUGUI HealthText;
     // Start is called before the first frame update
     void Start()
     {
         rigBodPlayer = GetComponent<Rigidbody2D>();
-
+        Health = 30;
+        HealthText.text = Health.ToString();
     }
 
     // Update is called once per frame
@@ -133,5 +139,18 @@ public class PlayerMove : MonoBehaviour
 
         return direction;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("touch");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Health--;
+            HealthText.text = Health.ToString();
 
+            if (Health <= 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+    }
 }

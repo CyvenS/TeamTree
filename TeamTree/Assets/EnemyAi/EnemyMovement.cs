@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -17,4 +18,6 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, tree.transform.position, moveSpeed * Time.deltaTime);    
     }
+
+
 }
