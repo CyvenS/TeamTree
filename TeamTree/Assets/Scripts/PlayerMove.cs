@@ -12,13 +12,15 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rigBodPlayer;
     private SpriteRenderer spritePlayer;
 
+    public GameObject Resources;
+
     public int Health;
     public TextMeshProUGUI HealthText;
     // Start is called before the first frame update
     void Start()
     {
         rigBodPlayer = GetComponent<Rigidbody2D>();
-        Health = 30;
+        Health = 20;
         HealthText.text = Health.ToString();
     }
 
@@ -153,4 +155,20 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+    void DebugWater()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (Resources.GetComponent<ResourceManager>().resourceAmount >= 5)
+            {
+                Resources.GetComponent<ResourceManager>().resourceAmount = Resources.GetComponent<ResourceManager>().resourceAmount - 5;
+                Health = Health + 10;
+                if (Health > 20)
+                {
+                    Health = 20;
+                }
+            }
+        }
+    }
+
 }
