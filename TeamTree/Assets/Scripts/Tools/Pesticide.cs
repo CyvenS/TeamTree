@@ -9,6 +9,7 @@ public class Pesticide : MonoBehaviour
     public int sprayLevel;
     public GameObject PestSpray;
     private GameObject Player;
+    private GameObject Resources;
     private
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,13 @@ public class Pesticide : MonoBehaviour
     }
     void DebugSpray()
     {
-        sprayLevel++;
-    }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (Resources.GetComponent<ResourceManager>().resourceAmount >= 10)
+            {
+                Resources.GetComponent<ResourceManager>().resourceAmount = Resources.GetComponent<ResourceManager>().resourceAmount - 10;
+                sprayLevel++;
+            }
+            }
+        }
 }

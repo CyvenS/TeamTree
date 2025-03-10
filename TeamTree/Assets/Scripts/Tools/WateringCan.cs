@@ -8,6 +8,7 @@ public class WateringCan : MonoBehaviour
     public int canLevel;
     public GameObject WaterSpray;
     private GameObject Player;
+    public GameObject Resources;
     private 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,12 @@ public class WateringCan : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            canLevel++;
+            if (Resources.GetComponent<ResourceManager>().resourceAmount >= 10)
+            {
+                Resources.GetComponent<ResourceManager>().resourceAmount = Resources.GetComponent<ResourceManager>().resourceAmount - 10;
+                canLevel++;
+            }
         }
     }
 }
+
