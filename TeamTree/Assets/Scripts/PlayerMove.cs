@@ -42,7 +42,7 @@ public class PlayerMove : MonoBehaviour
         playerDirection = InputPick(playerDirection);
     }
 
-    private float InputPick(float direction)
+    public float InputPick(float direction)
     {
         bool keyUp;
         bool keyLeft;
