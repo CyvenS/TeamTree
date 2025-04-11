@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3330337272054844220}
   - component: {fileID: 885521984406291497}
   - component: {fileID: 725832109501877600}
-  - component: {fileID: 6532919780995514706}
+  - component: {fileID: -2281027553199131189}
   m_Layer: 0
   m_Name: BugEntry
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
-  m_LayoutPriority: 1
---- !u!114 &6532919780995514706
+  m_LayoutPriority: 10
+--- !u!114 &-2281027553199131189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

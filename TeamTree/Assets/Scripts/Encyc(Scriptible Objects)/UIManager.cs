@@ -35,6 +35,10 @@ public class UIManager : MonoBehaviour
 
             UIManager.Instance.ClosePopup();
         }
+       // if(Input.GetKeyDown(KeyCode.P))
+       // {
+          
+       // }
     }
     public void ShowBugPopup(BugData bug)
     {

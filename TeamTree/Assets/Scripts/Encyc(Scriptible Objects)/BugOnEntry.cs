@@ -12,5 +12,6 @@ public class BugOnEntry : MonoBehaviour
     {
         bugImage.sprite = data.bugImage;
         bugName.text = data.bugName;
+        Debug.LogError("Entry not found");
     }
 }
