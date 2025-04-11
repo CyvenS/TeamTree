@@ -9,6 +9,16 @@ public class PlayerMove : MonoBehaviour
     public float playerDirection;
     private Rigidbody2D rigBodPlayer;
     private SpriteRenderer spritePlayer;
+<<<<<<< Updated upstream
+=======
+
+ 
+
+    public GameObject Resources;
+
+    public int Health;
+    public TextMeshProUGUI HealthText;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
 
         if (InputPick(playerDirection) != 500)
         {
@@ -34,58 +44,70 @@ public class PlayerMove : MonoBehaviour
         playerDirection = InputPick(playerDirection);
     }
 
-    private float InputPick(float direction)
+    public float InputPick(float direction)
     {
         bool keyUp;
         bool keyLeft;
         bool keyDown;
         bool keyRight;
 
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             keyUp = true;
+
+
         }
         else
         {
             keyUp = false;
+
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             keyLeft = true;
+       
         }
         else
         {
             keyLeft = false;
+         
         }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             keyDown = true;
+    
         }
         else
         {
             keyDown = false;
+        
         }
 
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             keyRight = true;
+         
         }
         else
         {
             keyRight = false;
+            
         }
 
         if (keyUp && keyDown)
         {
             keyUp = false;
             keyDown = false;
+           
         }
         if (keyLeft && keyRight)
         {
             keyLeft = false;
             keyRight = false;
+            
         }
 
         if (keyUp)
