@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170c3aa624472c04bbe58c6b25c049c8, type: 3}
+  m_Name: Brown Spruce Longhorn Beetle
+  m_EditorClassIdentifier: 
+  bugName: Brown Spruce Longhorn Beetle
+  info: 'The brown spruce longhorn beetle (Tetropium fuscum) is native to northern
+    and central Europe, Russia and Japan.
+
+
+    In Canada, it infests spruce trees,
+    such as red, white, black and Norway. Except for a small population near Calhoun,
+    New Brunswick, the brown spruce longhorn beetle has only been found in Nova Scotia.
+
+
+    The
+    brown spruce longhorn beetle spreads naturally and through the movement of infested
+    material such as spruce firewood and spruce logs being shipped to mills.
+
+
+
+    It
+    prefers and survives better in stressed, weakened and recently fallen spruce
+    trees.
+
+
+
+    It can infest healthy spruce, but this is rare unless populations
+    are high.
+
+
+
+    Mature spruce forests under stress from disturbances such as
+    drought, defoliation, strong winds are at risk of a brown spruce longhorn beetle
+    infestation.
+
+
+
+    Once infested, spruce trees die within one to five years.'
+  bugImage: {fileID: 21300000, guid: 53c703a212e3d054c8f290fb3d93e11d, type: 3}

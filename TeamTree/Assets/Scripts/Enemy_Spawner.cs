@@ -7,6 +7,7 @@ public class Enemy_Spawner : MonoBehaviour
     public GameObject enemyToSpawn;
 
     public float timeBetweenSpawns = 6f;
+    public float spawnRatioMult; // time multiplier for the spawn speed as game progresses 
     public static float enemy_Limit;
     public Vector2 spawnRangeX = new Vector2(1, -1);
     public Vector2 spawnRangeY = new Vector2(1, -1);

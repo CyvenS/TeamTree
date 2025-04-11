@@ -32,7 +32,7 @@ public class enemyai : MonoBehaviour
         {
             
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            Debug.Log(target.position + "currently tracking target " + target);
+            // Debug.Log(target.position + "currently tracking target " + target);
         }
 
         
